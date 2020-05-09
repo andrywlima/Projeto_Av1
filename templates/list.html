@@ -1,0 +1,47 @@
+{% extends "model-page.html" %}
+
+{% block style %}
+
+<style>
+	
+.polaroid {
+
+
+	width: -250px;
+}
+
+
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+	
+	<div class="container">
+		<div class="row">
+			{% for p in obj %}
+			<div class="col-sm-3">
+				<div class="polaroid">
+
+					<img src="{{p.img.url}}"  style="width: 100%">
+
+				<div class="container">
+						<h4>{{ p.nome }}</h4>
+				<h4>{{ p.descricao }}</h4>
+				<h4>{{ p.data }}</h4>
+				
+					
+				</div>
+				</div>
+
+			</div>
+
+			{% endfor %}
+		</div>
+		
+	</div>
+
+
+
+{% endblock %}
